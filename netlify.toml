@@ -1,7 +1,8 @@
+# netlify.toml
 [build]
   command   = "npm run build"
-  publish   = "out"
+  publish   = "out"           # the folder Next.js will write when using output: 'export'
 
 [build.environment]
-  # Tell Netlify’s Next.js plugin to skip
+  # prevent Netlify’s Next.js plugin from running at all
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
