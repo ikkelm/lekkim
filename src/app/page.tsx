@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center min-h-screen p-4 md:p-8 justify-center bg-black text-white">
       <header className="mb-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">Mikkel Wulff</h1>
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-center">Mikkel Wulff</h1>
         <p className="text-gray-400 text-center"></p>
       </header>
 
@@ -60,3 +60,4 @@ export default function Home() {
     </div>
   );
 }
+
