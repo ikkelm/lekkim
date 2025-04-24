@@ -42,10 +42,11 @@ export default function Home() {
                 <AlertDialogAction onClick={() => setIsPhoneVisible(true)}>
                   Continue
                 </AlertDialogAction>
-              </AlertDialogContent>
-            </AlertDialog>
-          </CardContent>
-        </Card>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </CardContent>
+      </Card>
     </div>
   );
 }
