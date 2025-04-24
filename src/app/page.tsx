@@ -1,6 +1,7 @@
 'use client';
 
-import {Button} from '@/components/ui/button';
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,52 +13,83 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import {useState} from 'react';
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 export default function Home() {
-  const [isPhoneVisible, setIsPhoneVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    const encodedEmail = 'aGV5QG1pa2tlbHd1bGZmLnNl'; // hey@mikkelwulff.se
+    const encodedPhone = 'KzQ2NzA2NDgzMjY1';            // +46706483265
+
+    setEmail(atob(encodedEmail));
+    setPhone(atob(encodedPhone));
+  }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-4 md:p-8 justify-center bg-black text-white">
-      <header className="mb-8 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-center">Mikkel Wulff</h1>
-        <p className="text-gray-400 text-center"></p>
-      </header>
+    <div className="min-h-screen flex flex-col bg-black text-white font-sans">
+      {/* Main content centered vertically */}
+      <main className="flex flex-1 items-center justify-center p-6 md:p-12">
+        <div className="inline-block text-left">
+          <h1 className="uppercase text-8xl md:text-9xl font-display font-bold tracking-tight">
+            Mikkel Wulff
+          </h1>
 
-      <section className="flex items-center justify-center">
-        <Card className="bg-gray-800 shadow-xl border-none">
-          <CardHeader>
-            <CardTitle className="text-xl font-semibold text-white">Säg hej!</CardTitle>
-            <CardDescription className="text-gray-300">Get in touch with me.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-3 text-gray-300">Email: hey@mikkelwulff</p>
-            <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <Button variant="outline">
-                  {isPhoneVisible ? '+46706483265' : 'Show Phone Number'}
-                </Button>
-              </AlertDialogTrigger>
-              <AlertDialogContent className="bg-gray-700">
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                  <AlertDialogDescription>
-                    This action reveals my phone number. Are you sure you want to proceed?
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction onClick={() => setIsPhoneVisible(true)}>
-                    Continue
-                  </AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-          </CardContent>
-        </Card>
-      </section>
+          <Card className="bg-black shadow-xl border-none w-fit mt-12">
+            <CardHeader>
+              <CardTitle className="text-xl font-semibold text-white">
+                Tjena mors! Hör av dig vetja, det blir kul! &#128075;
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-300 font-bold">
+                <b>Email:</b>{' '}
+                {email ? (
+                  <a href={`mailto:${email}`} className="hover:text-gray-100 font-bold">
+                    {email}
+                  </a>
+                ) : (
+                  <em>Loading…</em>
+                )}
+              </p>
+              <p className="mb-3 text-gray-300 font-bold">
+                <b>Nummer:</b>{' '}
+                {phone ? (
+                  <a href={`tel:${phone}`} className="hover:text-gray-100 font-bold">
+                    {phone.replace(/(\+?\d{2})(\d{4})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5')}
+                  </a>
+                ) : (
+                  <em>Loading…</em>
+                )}
+              </p>
+              <p className="mb-3 text-gray-300 font-bold">
+                <b>LinkedIn:</b>{' '}
+                <a
+                  href="https://www.linkedin.com/in/mikkelwulff/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-100 font-bold"
+                >
+                  Här!
+                </a>
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </main>
+
+      {/* Footer at bottom */}
+      <footer className="py-4 w-full text-center text-xs text-gray-500">
+        © {currentYear} by december productions.
+      </footer>
     </div>
   );
 }
-

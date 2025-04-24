@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
     darkMode: ["class"],
     content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -61,6 +61,19 @@ export default {
   				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          display: ['Montserrat', 'sans-serif'],
+          accent: ['Poppins', 'sans-serif'],
+        },
+        fontSize: {
+            '9xl': '10rem'
+        },
+        fontWeight: {
+            'bold': '700',
+            'medium': '500',
+            'regular': '400',
+        },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -91,4 +104,6 @@ export default {
   	}
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
+
+export default config;
