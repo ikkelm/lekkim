@@ -25,10 +25,10 @@ export default function Home() {
         <p className="text-gray-400 text-center"></p>
       </header>
 
-      <section>
+      <section className="flex items-center justify-center">
         <Card className="bg-gray-800 shadow-xl border-none">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Säg hej!</CardTitle>
+            <CardTitle className="text-xl font-semibold text-white">Säg hej!</CardTitle>
             <CardDescription className="text-gray-300">Get in touch with me.</CardDescription>
           </CardHeader>
           <CardContent>
@@ -51,11 +51,12 @@ export default function Home() {
                   <AlertDialogAction onClick={() => setIsPhoneVisible(true)}>
                     Continue
                   </AlertDialogAction>
-                </AlertDialogContent>
-              </AlertDialog>
-            </CardContent>
-          </Card>
-        </section>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </CardContent>
+        </Card>
+      </section>
     </div>
   );
 }
