@@ -25,13 +25,10 @@ export default function Home() {
   const [isPhoneVisible, setIsPhoneVisible] = useState(false);
 
   return (
-    <main className="flex flex-col items-center min-h-screen p-6 md:p-12 justify-center bg-black text-white">
+    <main className="flex flex-col items-center min-h-screen p-6 md:p-12 justify-center">
       <section className="max-w-screen-md w-full">
         <div className="mb-10 text-center">
-          <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight text-white">Mikkel Wulff</h1>
-          <p className="text-muted-foreground text-center text-lg mt-2">
-            A portfolio showcasing contact information.
-          </p>
+          <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight">Mikkel Wulff</h1>
         </div>
 
         <section>
@@ -70,4 +67,5 @@ export default function Home() {
     </main>
   );
 }
+
 
