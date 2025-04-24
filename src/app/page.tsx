@@ -9,15 +9,15 @@ export default function Home() {
   const [isPhoneVisible, setIsPhoneVisible] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen p-4 md:p-8">
-      <header className="mb-8">
+    <div className="flex flex-col items-center min-h-screen p-4 md:p-8">
+      <header className="mb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Mikkel Wulff</h1>
         <p className="text-muted-foreground">
           A portfolio showcasing projects and contact information.
         </p>
       </header>
 
-      <section className="mb-8">
+      <section className="mb-8 w-full max-w-md">
         <Card>
           <CardHeader>
             <CardTitle>Contact Information</CardTitle>
@@ -50,7 +50,7 @@ export default function Home() {
         </Card>
       </section>
 
-      <section>
+      <section className="w-full max-w-3xl">
         <h2>Projects</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Card className="hover:scale-105 transition-transform">
@@ -102,4 +102,3 @@ export default function Home() {
     </div>
   );
 }
-
