@@ -1,5 +1,5 @@
 // src/app/[project]/page.tsx
-'use client'
+//'use client'
 import React from 'react'
 
 // 1. List all the project‐slugs you want to build
