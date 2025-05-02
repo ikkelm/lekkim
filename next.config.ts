@@ -2,9 +2,12 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // ← Add this:
+  // 1. Force static export
   output: 'export',
-  
+
+  // 2. Emit folders (out/foo/index.html) instead of flat files (out/foo.html)
+  trailingSlash: true,
+
   /* your existing options */
   typescript: {
     ignoreBuildErrors: true,
