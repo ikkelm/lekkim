@@ -6,8 +6,8 @@
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "export": "next export",
-    "build": "next build && next export",
+    "export": "next export",         // optional, for local
+    "build": "next build",           // Netlify will auto-export
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
