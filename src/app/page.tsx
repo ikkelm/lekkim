@@ -1,5 +1,6 @@
 'use client';
 
+import Navbar from '@/components/ui/Navbar'
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -22,6 +23,7 @@ import {
 } from '@/components/ui/card';
 
 export default function Home() {
+   <>
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const currentYear = new Date().getFullYear();
@@ -85,6 +87,7 @@ export default function Home() {
           </Card>
         </div>
       </main>
+      <Navbar />
 
       {/* Footer at bottom */}
       <footer className="py-4 w-full text-center text-xs text-gray-500">
