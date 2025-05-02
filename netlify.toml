@@ -6,15 +6,3 @@
 [build.environment]
   # prevent Netlify’s Next.js plugin from running at all
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
-[[redirects]]
-  from   = "/ord"
-  to     = "https://s-kul-ord.lovable.app/"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "/ord/*"
-  to     = "https://s-kul-ord.lovable.app/:splat"
-  status = 200
-  force  = true
