@@ -1,28 +1,31 @@
-import Link from 'next/link'
+// src/app/[project]/page.tsx
+'use client'
+import React from 'react'
 
+// 1. List all the project‐slugs you want to build
 const PROJECTS = [
   { slug: 's-kul-ord', title: 'Kul ord-appen' },
-  { slug: 'another-proj', title: 'My Other Project' },
-  // same list as above
+  //{ slug: 'another-proj', title: 'My Other Project' },
+  // …add more as you go
 ]
 
-export default function Home() {
-  return (
-    <main className="p-8">
-      <h1 className="text-3xl font-bold">My Portfolio</h1>
-      <ul className="mt-4 space-y-2">
-        {PROJECTS.map(p => (
-          <li key={p.slug}>
-            <Link
-              href={`/${p.slug}`}
-              className="text-blue-500 hover:underline"
-            >
-              {p.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </main>
-  )
+// 2. Tell Next.js which params to statically export
+export function generateStaticParams() {
+  return PROJECTS.map(p => ({ project: p.slug }))
 }
 
+// 3. Your actual page component, using params.project
+export default function ProjectPage({
+  params,
+}: {
+  params: { project: string }
+}) {
+  const { project } = params
+  return (
+    <iframe
+      src={`https://${project}.lovable.app`}
+      style={{ width: '100%', height: '100vh', border: 'none' }}
+      title={project}
+    />
+  )
+}
