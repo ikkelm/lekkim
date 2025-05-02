@@ -1,5 +1,7 @@
-'use client';
+//'use client';
 
+
+'use client';
 import Navbar from '@/components/ui/Navbar'
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
@@ -23,7 +25,7 @@ import {
 } from '@/components/ui/card';
 
 export default function Home() {
-   <>
+  
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const currentYear = new Date().getFullYear();
