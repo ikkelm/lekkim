@@ -4,7 +4,7 @@ import React from 'react'
 
 // 1. List all the project‐slugs you want to build
 const PROJECTS = [
-  { slug: 'ord', title: 'Kul med ord' },
+  { slug: 'orden', title: 'Kul med ord' },
   //{ slug: 'another-proj', title: 'My Other Project' },
   // …add more as you go
 ]
