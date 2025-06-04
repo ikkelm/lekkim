@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const projects = [
     { name: 'Projekt läsning 6-åring', href: 'https://www.mikkelwulff.se/orden' },
-    { name: 'Projekt video', href: 'https://www.nohili.io' },
+    { name: 'Projekt video', href: 'https://www.nohilo.io' },
     // lägg till fler projekt här
   ]
 
