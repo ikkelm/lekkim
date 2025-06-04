@@ -7,8 +7,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   const projects = [
-    { name: 'Projekt A', href: 'https://www.mikkelwulff.se/orden' },
-    { name: 'Projekt B', href: 'https://www.decemberproductions.com/approved' },
+    { name: 'Projekt läsning 6-åring', href: 'https://www.mikkelwulff.se/orden' },
+    { name: 'Projekt video', href: 'https://www.nohili.io' },
     // lägg till fler projekt här
   ]
 
